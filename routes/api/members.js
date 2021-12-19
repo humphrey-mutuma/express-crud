@@ -6,6 +6,7 @@ const uuid = require("uuid");
 // get all members
 router.get("/", (req, res) => {
   res.json(members);
+
 });
 
 // get single member
@@ -30,7 +31,8 @@ router.post("/", (req, res) => {
     res.status(400).json({ msg: "pls include a name and email" });
   } else {
     members.push(newMember);
-    res.json(members);
+    // res.json(members);
+    res.redirect("/");
   }
 });
 
